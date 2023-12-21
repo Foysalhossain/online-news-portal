@@ -17,7 +17,7 @@ const Header = () => {
                     Match Highlights: Germany vs Spain — as it happened   !   Match Highlights: Germany vs Spain as...
                 </Marquee>
             </div>
-            <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+            <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary mb-4">
                 <Container>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
