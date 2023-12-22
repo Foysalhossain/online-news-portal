@@ -2,7 +2,7 @@ import { Button, ListGroup } from "react-bootstrap";
 import { FaGoogle, FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import QZone from "../QZone/QZone";
-
+import bg from "../../../assets/bg.png";
 
 
 const RightNav = () => {
@@ -20,6 +20,9 @@ const RightNav = () => {
                 </ListGroup>
             </div>
             <QZone />
+            <div className="py-4">
+                <img src={bg} alt="" />
+            </div>
         </div>
     );
 };
