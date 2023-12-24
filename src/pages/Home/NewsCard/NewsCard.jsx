@@ -11,8 +11,7 @@ const NewsCard = ({ news }) => {
             <Card.Body>
                 <Card.Title>{title}</Card.Title>
                 <Card.Text>
-                    {/* {details.length < 250 ? <>{details}</> : <>{details.slice(0, 250)}... <Link to={`/news/${_id}`}>Read More</Link></>} */}
-                    {details.length < 250 ? <>{details}</> : <>{details.slice(0, 250)}</>}
+                    {details.length < 250 ? <>{details}</> : <>{details.slice(0, 250)}... <Link to={`/news/${_id}`}>Read More</Link></>}
                 </Card.Text>
             </Card.Body>
             <Card.Footer className="text-muted">2 days ago</Card.Footer>
