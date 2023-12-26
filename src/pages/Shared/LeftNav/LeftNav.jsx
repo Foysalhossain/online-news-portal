@@ -13,7 +13,7 @@ const LeftNav = () => {
     }, [])
     return (
         <div>
-            <h4 className="p-3 bg-body-tertiary text-center">All Category</h4>
+            <h4 style={{background: "#E7E7E7"}} className="p-3 text-center">All Category</h4>
             <div className="ps-4 py-2">
                 {
                     categories.map(category => <p
