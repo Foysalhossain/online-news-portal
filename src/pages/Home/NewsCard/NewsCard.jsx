@@ -3,6 +3,8 @@ import { Card, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { CiBookmark, CiShare2 } from "react-icons/ci";
 import { IoEye } from "react-icons/io5";
+import { IoIosStar, IoIosStarOutline } from "react-icons/io";
+import Rating from "react-rating";
 
 
 const NewsCard = ({ news }) => {
@@ -27,9 +29,16 @@ const NewsCard = ({ news }) => {
                     {details.length < 250 ? <>{details}</> : <>{details.slice(0, 250)}... <Link to={`/news/${_id}`}>Read More</Link></>}
                 </Card.Text>
             </Card.Body>
-            <Card.Footer className="text-muted">
-                <div>
-
+            <Card.Footer className="text-muted d-flex">
+                <div className="flex-grow-1">
+                    <Rating
+                        placeholderRating={rating.number}
+                        readonly
+                        emptySymbol={<IoIosStarOutline />}
+                        placeholderSymbol={<IoIosStar />}
+                        fullSymbol={<img src="assets/images/star-yellow.png" className="icon" />}
+                    />
+                    <span className="ms-2">{rating?.number}</span>
                 </div>
                 <div>
                     <IoEye /> {total_view}
