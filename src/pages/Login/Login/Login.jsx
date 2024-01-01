@@ -2,11 +2,15 @@ import { useContext } from "react";
 import { Container } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const Login = () => {
     const { signIn } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    console.log('login page location', location);
+    const from = location.state?.from.pathname || "/category/0";
 
     const handleLogin = event => {
         event.preventDefault();
@@ -19,6 +23,7 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+                navigate(from, { replace: true })
                 form.reset();
             })
             .catch(error => {
@@ -47,7 +52,7 @@ const Login = () => {
                 </Button>
                 <br />
                 <Form.Text className="text-secondary">
-                    Don't Have an Account? <Link to="/register" className="text-decoration-none text-danger">Please Register</Link>
+                    Do not Have an Account? <Link to="/register" className="text-decoration-none text-danger">Please Register</Link>
                 </Form.Text>
                 <Form.Text className="text-success">
 
