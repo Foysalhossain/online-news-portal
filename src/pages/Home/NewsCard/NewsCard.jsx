@@ -32,6 +32,7 @@ const NewsCard = ({ news }) => {
             <Card.Footer className="text-muted d-flex">
                 <div className="flex-grow-1">
                     <Rating
+                        className="text-warning"
                         placeholderRating={rating.number}
                         readonly
                         emptySymbol={<IoIosStarOutline />}
